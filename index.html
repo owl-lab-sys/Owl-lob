@@ -4,31 +4,155 @@
     <meta charset="UTF-8">
     <title>梟の研究所</title>
     <style>
-        div.bg {
-            background-color: #fffdfd61;
-            border: 2px solid #000;
-            margin-right: 10px;
-            margin-left: 10px;
-            width: 50%;
+        * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 10px;
+        background: transparent;
+        color: #222;
+        font-family:
+            "Yu Gothic",
+            "Meiryo",
+            sans-serif;
+    }
+
+    /* メインパネル */
+    .bg {
+        background-color: #fffdfd61;
+        border: 2px solid #000;
+        margin-right: auto;
+        margin-left: auto;
+        width: 50%;
+        min-width: 320px;
+        max-width: 760px;
+        padding: 20px;
+    }
+
+    /* タイトル */
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        margin: 0 0 5px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    /* 各セクション */
+    section {
+        margin-top: 18px;
+        padding-top: 12px;
+        border-top: 1px solid #555;
+    }
+
+    h2 {
+        font-size: 19px;
+        margin: 0 0 10px;
+    }
+
+    ul {
+        font-size: 14px;
+        line-height: 1.8;
+        margin: 5px 0;
+    }
+
+    /* 現在の状態 */
+    .status {
+        display: inline-block;
+        padding: 3px 10px;
+        margin-right: 8px;
+        border-radius: 4px;
+        background: #d8ead8;
+        color: #245b24;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .status_done {
+        display: inline-block;
+        padding: 3px 10px;
+        margin-right: 8px;
+        border-radius: 4px;
+        background: #3a393998;
+        color: #3f413f;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    /* 小さい画面への対応 */
+    @media (max-width: 700px) {
+        .bg {
+            width: 95%;
+            min-width: 0;
         }
+
+        h1 {
+            font-size: 22px;
+        }
+    }
         
         </style>
     <!-- <link rel="stylesheet" href="css/LGN/lgin.css" /> -->
 </head>
 <body>
     <div class="bg">
-    <h1>梟の研究所へようこそ</h1>
-    <h4>初期画面。作成中</h4>
-    <p>なんとなくで制作ちゅう...どうやら無事反映されているようだ</p>
-    <h5>やりたいこと</h5>
+     <h1>梟の研究所へようこそ</h1>
+    <div class="subtitle">OWL'S LABORATORY</div>
+    <!-- やりたいこと -->
+    <section>
+        <h2>01. やりたいこと</h2>
+       <ul>
+            <li>自己紹介・プロフィール</li>
+            <li>SNS・外部リンク</li>
+            <li>配信情報</li>
+            <li>お知らせ・更新情報</li>
+            <li>その他ツール提供</li>
+        </ul>
+    </section>
+    <!-- 配信中に行っていること -->
+    <section>
+        <h2>02. 配信中に行っていること</h2>
+        <ul>
+            <li>仕事中</li>
+            <li>プログラミング中</li>
+        </ul>
+    </section>
+    <!-- 現在着手中 -->
+    <section>
+        <h2>03. 現在着手中</h2>
+
+        <ul>
+            <li>
+                <span class="status">進行中</span>
+                研究所公式サイトの制作
+            </li>
+            <li>
+                <span class="status">進行中</span>
+                研究内容の「要件定義」を作成中
+            </li>
+            <li>
+                <span class="status_done">完了</span>
+                ページ全体の自動更新ができているかの確認(10分毎確定)                
+            </li>
+        </ul>
+    </section>
+    <!-- <h4>初期画面。作成中</h4>
+    <p>なんとなくで制作ちゅう...どうやら無事反映されているようだ</p> -->
+    <!-- <h5>やりたいこと</h5>
     <ul>
         <li>自己紹介・プロフィール</li>
         <li>SNS・外部リンク</li>
         <li>配信情報</li>
         <li>お知らせ・更新情報</li>
         <li>その他ツール提供</li>
-    </ul>
-    <h5>現在</h5>
+    </ul> -->
+    <!-- <h5>現在</h5>
     <ul>
         <li>研究内容の「要件定義」を作成中</li>
         <li>ページ全体の自動更新ができているかの確認(10分毎→確定)
@@ -36,7 +160,7 @@
                 <li>確認2-確認完了</li>
             </ul>
         </li>    
-    </ul>
+    </ul> -->
     </div>
     <!-- <div class="overlay">
         <div class="content">
