@@ -29,20 +29,11 @@
     <h5>現在</h5>
     <ul>
         <li>研究内容の「要件定義」を作成中</li>
-        <li>ページ全体の自動更新ができているかの確認(10分毎→30分毎に変更)
+        <li>ページ全体の自動更新ができているかの確認(10分毎→確定)
             <ul>
                 <li>確認2-確認完了</li>
             </ul>
-        </li>
-        <li>
-            <div id="stream-status">
-            配信状況：自動更新ができているかの確認(10分毎)
-            <ul>
-                <li>確認1-2-確認完了→失敗</li>
-            </ul>
-            </div>
-            
-        </li>
+        </li>    
     </ul>
     </div>
     <!-- <div class="overlay">
@@ -55,45 +46,12 @@
     <script src="js/LGN/lgin.js"></script> -->
     <script>
 // ==================================
-// ページ全体を30分ごとに更新
+// ページ全体を10分ごとに更新
 // ==================================
 setInterval(() => {
     location.reload();
-}, 30 * 60 * 1000);
+}, 10 * 60 * 1000);
 
-
-// ==================================
-// 配信状況を10分ごとに部分更新
-// ==================================
-async function updateStreamStatus() {
-    try {
-        const response = await fetch(
-            "/Owl-lob/data/status.txt",
-            { cache: "no-store" }
-        );
-
-        if (!response.ok) {
-            throw new Error(
-                "配信状況の取得に失敗しました: " + response.status
-            );
-        }
-
-        const status = await response.text();
-
-        document.getElementById("stream-status").textContent = status;
-
-        console.log("配信状況を更新しました:", status);
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-// 初回実行
-updateStreamStatus();
-
-// 10分ごとに更新
-setInterval(updateStreamStatus, 10 * 60 * 1000);
 </script>
 </body>
 </html>
